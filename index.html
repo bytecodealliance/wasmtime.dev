@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Wasmtime — a small and efficient runtime for WebAssembly &amp; WASI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="canonical" href="/">
+  <script src="assets/scripts/tools-install.js"></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="site-nav">
+      <ul>
+        <li>
+          <a class="page-link" href="/">
+            Wasmtime
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/CraneStation/wasmtime" title=" GitHub">
+            <i class="fa fa-fw fa-github"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="content">
+    <article>
+      <header>
+        <h1 class="title">Wasmtime</h1>
+        <h2 class="subtitle">A small and efficient runtime for WebAssembly &amp; WASI</h2>
+      </header>
+      <p>Start using the latest developments in WebAssembly and WASI with the Wasmtime runtime.</p>
+
+      <section>
+        <h3>Installing Wasmtime</h3>
+        <div id="platform-instructions-unix" class="dn">
+          <p>It looks like you’re running macOS or Linux. To download and install
+            Wasmtime, run the following in your terminal, then follow the on-screen instructions.</p>
+          <pre><code>curl https://wasmtime.dev/install.sh -sSf | sh</code></pre>
+        </div>
+        <div id="platform-instructions-win" class="dn">
+          <p>It looks like you’re running Windows. To install Wasmtime, download and run the following, and then follow
+            the onscreen instructions.</p>
+          <p><a href="https://github.com/CraneStation/wasmtime/releases/download/dev/wasmtime-dev-x86_64-windows.msi">Wasmtime Installer</a></p>
+          <p>If you’re a Windows Subsystem for Linux user run the following in your terminal, then follow the
+            on-screen instructions to install Wasmtime.</p>
+          <pre><code>curl https://wasmtime.dev/install.sh -sSf | sh</code></pre>
+        </div>
+        <div id="platform-instructions-default" class="db">
+          <div>
+            <p>If you’re running macOS or Linux, download and install
+              Wasmtime by running the following in your terminal and following the on-screen instructions.</p>
+            <pre><code>curl https://wasmtime.dev/install.sh -sSf | sh</code></pre>
+          </div>
+          <hr />
+          <div>
+            <p>
+              If you are running Windows, download and run the <a href="https://github.com/CraneStation/wasmtime/releases/download/dev/wasmtime-dev-x86_64-windows.msi">Wasmtime Installer</a>
+              then follow the on-screen instructions.
+            </p>
+          </div>
+        </div>
+        <hr />
+        <p>Alternatively, you can also download releases for all supported platforms from the <a href="https://github.com/CraneStation/wasmtime/releases">Wasmtime GitHub page</a>.</p>
+      </section>
+      
+      <section>
+        <h3>Building Wasmtime</h3>
+        <h4>System requirements</h4>
+        <p>Building Wasmtime requires a recent version of the <a href="https://www.rust-lang.org/learn/get-started">Rust compiler and toolchain</a>, and a C++ toolchain released after 2007.</p>
+        <h4>Downloading and building the sources</h4>
+        <p>With those requirements in place, you can download and build the Wasmtime source:</p>
+        <pre><code>git clone --recurse-submodules \
+    https://github.com/CraneStation/wasmtime.git
+cargo build --release</code></pre>
+        </section>
+      
+      <section>
+        <h3>Targeting Wasmtime</h3>
+        <p>We're maintaining WASI toolchains for Rust and C/C++. For an introduction to those, please see our <a href="https://github.com/CraneStation/wasmtime/blob/master/docs/WASI-tutorial.md">WASI tutorial</a>, which has sections on <a href="https://github.com/CraneStation/wasmtime/blob/master/docs/WASI-tutorial.md#from-c">C</a> and <a href="https://github.com/CraneStation/wasmtime/blob/master/docs/WASI-tutorial.md#from-rust">Rust</a>.</p>
+
+        <p>For more information on WASI, see the <a href="https://wasi.dev/">WASI homepage</a>.</p>
+        </section>
+
+        <script>
+          select_platform();
+        </script>
+    </article>
+
+  </div>
+
+
+
+
+</body>
+
+</html>
