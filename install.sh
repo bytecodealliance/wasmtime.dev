@@ -450,7 +450,7 @@ install_from_file() {
 
   info 'Extracting' "Wasmtime binaries"
   # extract the files to the temp directory
-  tar -xzvf "$archive" -C "$extract_to"
+  tar -xvf "$archive" -C "$extract_to"
 
   # copy the files to the specified directory
   # binaries go into the bin folder
