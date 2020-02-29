@@ -407,7 +407,8 @@ header h1 { margin: 0; }
 .site-header form input:-ms-input-placeholder, .site-header form input::-webkit-input-placeholder { color: #fcfcff; }
 .site-header form button { border: none; font-size: 0.9em; background-color: #005CA5; color: #fcfcff; }
 
-.site-footer { display: inline-block; text-align: center; width: 100%; color: white; font-size: 0.9em; }
+.site-footer { display: inline-block; text-align: right; width: 100%; font-size: 0.9em; padding-top: 2em; padding-bottom: 2em; }
+.site-footer a:hover { filter: brightness(80%); }
 
 .tags { width: 100%; }
 .tags .tag { margin-right: 0.5em; color: #fcfcff; }
