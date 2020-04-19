@@ -454,7 +454,7 @@ install_from_file() {
 
   # copy the files to the specified directory
   # binaries go into the bin folder
-  cp "$extracted_path/wasmtime" "$extracted_path/wasm2obj" "$copy_to/bin"
+  cp "$extracted_path/wasmtime" "$copy_to/bin"
 
   # the others directly into the specified folder
   cp "$extracted_path/LICENSE" "$extracted_path/README.md" "$copy_to"
