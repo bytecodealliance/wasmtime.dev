@@ -45,7 +45,7 @@ get_latest_release() {
 }
 
 release_url() {
-  echo "https://github.com/cranestation/wasmtime/releases"
+  echo "https://github.com/bytecodealliance/wasmtime/releases"
 }
 
 download_release_from_repo() {

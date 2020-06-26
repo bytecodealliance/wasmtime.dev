@@ -285,15 +285,15 @@ figure { margin: 0; }
 
 .gist table tbody tr td { box-sizing: content-box; }
 
-html { background: #005CA5; }
+html { background: #fff; }
 
 ::selection { background: #fcfcff; }
 
 ::-moz-selection { background: #fcfcff; }
 
-body { color: #C2D5E0; font-family: "Source Sans Pro", Helvetica, Arial, sans-serif; font-size: 1.25em; word-wrap: break-word; }
+body { color: #000; font-family: 'IBM Plex Sans', sans-serif; font-size: 1.25em; word-wrap: break-word; }
 
-h1, h2, h3, h4, h5, h6 { font-family: "Source Sans Pro", Helvetica, Arial, sans-serif; line-height: 1.3; margin: 0.67em 0; color: white; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Metropolis', sans-serif; line-height: 1.3; margin: 0.67em 0; color: #000; }
 
 h1 { font-size: 2.5em; }
 
@@ -328,7 +328,7 @@ ol, ul { list-style-position: inside; }
 
 hr { border: 0; border-top: 1px solid rgba(0, 0, 0, 0.1); border-bottom: 1px solid #fff; margin: 1em 0; }
 
-a { color: #fcfcff; text-decoration: underline; }
+a { color: #005CA5; text-decoration: underline; }
 
 .nav { list-style: none; margin: 0; padding: 0; }
 
@@ -349,7 +349,7 @@ article, .comments, .feature-image .post-content, .call-out, .posts .post-teaser
 
 .button-link:hover, a.button:hover { background: #fcfcff; border: 1px solid #fcfcff; color: #005CA5; text-decoration: none; }
 
-.body-link:hover, article a:hover, .posts .post-teaser p a:hover { text-decoration: underline; color: #b0b0ff; }
+.body-link:hover, article a:hover, .posts .post-teaser p a:hover { text-decoration: underline; color: rgb(0, 69, 126); }
 
 .disabled { opacity: 0.7; }
 
@@ -407,7 +407,8 @@ header h1 { margin: 0; }
 .site-header form input:-ms-input-placeholder, .site-header form input::-webkit-input-placeholder { color: #fcfcff; }
 .site-header form button { border: none; font-size: 0.9em; background-color: #005CA5; color: #fcfcff; }
 
-.site-footer { display: inline-block; text-align: center; width: 100%; color: white; font-size: 0.9em; }
+.site-footer { display: inline-block; text-align: right; width: 100%; font-size: 0.9em; padding-top: 2em; padding-bottom: 2em; }
+.site-footer a:hover { filter: brightness(80%); }
 
 .tags { width: 100%; }
 .tags .tag { margin-right: 0.5em; color: #fcfcff; }
@@ -429,6 +430,43 @@ code {
     display: block;
     margin: 0;
     padding: 15px;
-    background: #005293;
+    background: #fbfbfb;
     border: 1px solid #C2D5E0;
 }
+
+@font-face {
+    font-family: 'Metropolis';
+    src: url('fonts/Metropolis-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Metropolis';
+    src: url('fonts/Metropolis-RegularItalic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'Metropolis';
+    src: url('fonts/Metropolis-SemiBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'Metropolis';
+    src: url('fonts/Metropolis-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Metropolis';
+    src: url('fonts/Metropolis-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Metropolis';
+    src: url('fonts/Metropolis-BoldItalic.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+  }
