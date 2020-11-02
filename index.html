@@ -15,12 +15,12 @@
     <nav class="site-nav">
       <ul>
         <li>
-          <a class="page-link" href="/">
-            Wasmtime
+          <a class="page-link" href="https://docs.wasmtime.dev/">
+            Documentation
           </a>
         </li>
         <li>
-          <a href="https://github.com/bytecodealliance/wasmtime" title=" GitHub">
+          <a href="https://github.com/bytecodealliance/wasmtime" title="GitHub">
             <svg height="29" viewBox="0 0 16 16" version="1.1" width="25" aria-hidden="true"><path fill="#C2D5E0" fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
           </a>
         </li>
@@ -35,9 +35,6 @@
         <h2 class="subtitle">A small and efficient runtime for WebAssembly &amp; WASI</h2>
       </header>
       <p>Start using the latest developments in WebAssembly and WASI with the Wasmtime runtime.</p>
-      <p>Wasmtime supports the <a href="https://hacks.mozilla.org/2019/08/webassembly-interface-types/">WebAssembly Interface Types</a> proposal:</p>
-      <iframe width="864" height="486" src="https://www.youtube.com/embed/Qn_4F3foB3Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <section>
         <h3>Installing Wasmtime</h3>
         <div id="platform-instructions-unix" class="dn">
           <p>It looks like you’re running macOS or Linux. To download and install
@@ -71,6 +68,35 @@
       </section>
       
       <section>
+        <h3>Embedding Wasmtime</h3>
+        <p>Wasmtime implements the standards-track <a href="https://github.com/WebAssembly/wasm-c-api">Wasm-C-API</a>.</p>
+        <p>The Bytecode Alliance also hosts Wasmtime embedding APIs for a number of languages:
+          <ul>
+            <li><a href="https://docs.wasmtime.dev/lang-rust.html">Rust</a></li>
+            <li><a href="https://github.com/bytecodealliance/wasmtime-py">Python</a></li>
+            <li><a href="https://github.com/bytecodealliance/wasmtime-go">Go</a></li>
+            <li><a href="https://github.com/bytecodealliance/wasmtime-dotnet">.NET</a></li>
+          </ul>
+          See <a href="https://docs.wasmtime.dev/lang.html">our documentation on language embeddings</a> for details on how to get started with these.</p>
+        <p>In addition, embedding APIs for other languages are maintained outside the Bytecode Alliance:
+          <ul>
+            <li>Java (two options: <a href="https://github.com/kawamuray/wasmtime-java">kawamuray/wasmtime-java</a> or <a href="https://github.com/bluejekyll/wasmtime-java">bluejekyll/wasmtime-java</a>)</li>
+            <li><a href="https://metacpan.org/pod/Wasm">Perl</a></li>
+            <li><a href="https://github.com/kubkon/wasmtime-zig">Zig</a></li>
+            <li><a href="https://github.com/dtcristo/wasmtime-ruby">Ruby</a></li>
+          </ul>
+      </section>
+
+      <section>
+        <h3>Targeting Wasmtime</h3>
+        <p>We're maintaining WASI toolchains for Rust and C/C++. For an introduction to those, please see our <a href="https://github.com/bytecodealliance/wasmtime/blob/main/docs/WASI-tutorial.md">WASI tutorial</a>, which has sections on <a href="https://github.com/bytecodealliance/wasmtime/blob/main/docs/WASI-tutorial.md#from-c">C</a> and <a href="https://github.com/bytecodealliance/wasmtime/blob/main/docs/WASI-tutorial.md#from-rust">Rust</a>.</p>
+
+        <p>See our <a href="https://github.com/bytecodealliance/wasmtime-demos">collection of examples</a> for some examples of content to run in, and ways to use Wasmtime.</p>
+
+        <p>For more information on WASI, see the <a href="https://wasi.dev/">WASI homepage</a>.</p>
+      </section>
+
+      <section>
         <h3>Building Wasmtime</h3>
         <h4>System requirements</h4>
         <p>Building Wasmtime requires a recent version of the <a href="https://www.rust-lang.org/learn/get-started">Rust compiler and toolchain</a>, and a C++ toolchain released after 2007.</p>
@@ -80,15 +106,6 @@
     https://github.com/bytecodealliance/wasmtime.git
 cd wasmtime
 cargo build --release</code></pre>
-        </section>
-      
-      <section>
-        <h3>Targeting Wasmtime</h3>
-        <p>We're maintaining WASI toolchains for Rust and C/C++. For an introduction to those, please see our <a href="https://github.com/bytecodealliance/wasmtime/blob/master/docs/WASI-tutorial.md">WASI tutorial</a>, which has sections on <a href="https://github.com/bytecodealliance/wasmtime/blob/master/docs/WASI-tutorial.md#from-c">C</a> and <a href="https://github.com/bytecodealliance/wasmtime/blob/master/docs/WASI-tutorial.md#from-rust">Rust</a>.</p>
-
-        <p>See our <a href="https://github.com/bytecodealliance/wasmtime-demos">demos repository</a> for some examples of content to run in, and ways to use Wasmtime.</p>
-
-        <p>For more information on WASI, see the <a href="https://wasi.dev/">WASI homepage</a>.</p>
         </section>
 
         <script>
