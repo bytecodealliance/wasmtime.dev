@@ -432,3 +432,11 @@ code {
     background: #005293;
     border: 1px solid #C2D5E0;
 }
+@media (max-width: 600px) {
+    code {
+        width: fit-content;
+    }
+    pre {
+        border: 1px solid #C2D5E0;
+    }
+}
