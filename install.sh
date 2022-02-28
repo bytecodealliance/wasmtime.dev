@@ -465,6 +465,10 @@ check_architecture() {
   local version="$1"
   local arch="$2"
 
+  if [[ "$arch $(uname)" = "aarch64 Linux" ]]; then
+    return 0
+  fi
+
   if [[ "$version" != "local"* ]]; then
     if [ "$arch" != "x86_64" ]; then
       error "Sorry! Wasmtime currently only provides pre-built binaries for x86_64 architectures."
