@@ -34,14 +34,15 @@
 # ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-# 
+#
 # The views and conclusions contained in the software and documentation are those
 # of the authors and should not be interpreted as representing official policies,
 # either expressed or implied, of the FreeBSD Project.
 
 get_latest_release() {
-  echo "dev"
-  # curl --silent "https://wasmtime.sh/latest-version"
+  curl --silent "https://api.github.com/repos/bytecodealliance/wasmtime/releases/latest" | \
+    grep tag_name | \
+    cut -d '"' -f 4
 }
 
 release_url() {
