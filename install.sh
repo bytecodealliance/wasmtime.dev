@@ -51,10 +51,11 @@ release_url() {
 
 download_release_from_repo() {
   local version="$1"
-  local os_info="$2"
-  local tmpdir="$3"
+  local arch="$2"
+  local os_info="$3"
+  local tmpdir="$4"
 
-  local filename="wasmtime-$version-x86_64-$os_info.tar.xz"
+  local filename="wasmtime-$version-$arch-$os_info.tar.xz"
   local download_file="$tmpdir/$filename"
   local archive_url="$(release_url)/download/$version/$filename"
   info $archive_url
@@ -426,6 +427,7 @@ compile_and_package() {
 download_release() {
   local version="$1"
 
+  local arch="$(get_architecture)"
   local uname_str="$(uname -s)"
   local os_info
   os_info="$(parse_os_info "$uname_str")"
@@ -438,7 +440,7 @@ download_release() {
   info 'Fetching' "archive for $pretty_os_name, version $version"
   # store the downloaded archive in a temporary directory
   local download_dir="$(mktemp -d)"
-  download_release_from_repo "$version" "$os_info" "$download_dir"
+  download_release_from_repo "$version" "$arch" "$os_info" "$download_dir"
 }
 
 install_from_file() {
@@ -461,20 +463,48 @@ install_from_file() {
   cp "$extracted_path/LICENSE" "$extracted_path/README.md" "$copy_to"
 }
 
+get_architecture() {
+    local arch="$(uname -m)"
+    case "$arch" in
+        # macOS on aarch64 says "arm64" instead.
+        arm64)
+            arch=aarch64
+            ;;
+    esac
+    echo "$arch"
+}
+
 check_architecture() {
   local version="$1"
   local arch="$2"
+  local os="$3"
 
-  if [[ "$arch $(uname)" = "aarch64 Linux" ]]; then
-    return 0
+  # Local version always allowed.
+  if [[ "$version" == "local"* ]]; then
+      return 0
   fi
 
-  if [[ "$version" != "local"* ]]; then
-    if [ "$arch" != "x86_64" ]; then
-      error "Sorry! Wasmtime currently only provides pre-built binaries for x86_64 architectures."
-      return 1
-    fi
-  fi
+  # Otherwise, check the matrix of OS/architecture support.
+  case "$arch/$os" in
+      aarch64/Linux)
+          return 0
+          ;;
+      aarch64/Darwin)
+          # Nothing; fall through to error below.
+
+          # TODO: remove this when v0.37.0 is released; it will have native M1
+          # Mac (aarch64/Darwin) binaries included in the release artifacts.
+          ;;
+      s390x/Linux)
+          return 0
+          ;;
+      x86_64/*)
+          return 0
+          ;;
+  esac
+
+  error "Sorry! Wasmtime currently only provides pre-built binaries for x86_64 (Linux, macOS, Windows), aarch64 (Linux), and s390x (Linux)."
+  return 1
 }
 
 
@@ -518,6 +548,6 @@ do
   esac
 done
 
-check_architecture "$version_to_install" "$(uname -m)" || exit 1
+check_architecture "$version_to_install" "$(get_architecture)" "$(uname)" || exit 1
 
 install_version "$version_to_install" "$install_dir"
