@@ -490,10 +490,7 @@ check_architecture() {
           return 0
           ;;
       aarch64/Darwin)
-          # Nothing; fall through to error below.
-
-          # TODO: remove this when v0.37.0 is released; it will have native M1
-          # Mac (aarch64/Darwin) binaries included in the release artifacts.
+          return 0
           ;;
       s390x/Linux)
           return 0
@@ -503,7 +500,7 @@ check_architecture() {
           ;;
   esac
 
-  error "Sorry! Wasmtime currently only provides pre-built binaries for x86_64 (Linux, macOS, Windows), aarch64 (Linux), and s390x (Linux)."
+  error "Sorry! Wasmtime currently only provides pre-built binaries for x86_64 (Linux, macOS, Windows), aarch64 (Linux, macOS), and s390x (Linux)."
   return 1
 }
 
