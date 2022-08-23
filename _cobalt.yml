@@ -1,0 +1,6 @@
+site:
+  title: Wasmtime
+  description: A fast and secure runtime for WebAssembly
+  base_url: https://wasmtime.dev
+posts:
+  rss: rss.xml

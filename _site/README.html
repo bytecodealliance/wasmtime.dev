@@ -1,0 +1,52 @@
+<h1>The <a href="https://wasmtime.dev/"><code>wasmtime.dev</code></a> Homepage</h1>
+<p>The Wasmtime homepage is generated with <a href="https://cobalt-org.github.io">the Cobalt static site
+generator</a>.</p>
+<h2>Overview</h2>
+<p>Every file and directory that isn't prefixed with <code>.</code> or <code>_</code> ends up in the
+built website.</p>
+<p>Markdown files are rendered to HTML.</p>
+<p>Each file is processed by the <code>liquid</code> templating engine so we can
+include/extend/loop/etc should we choose to.</p>
+<ul>
+<li><code>_cobalt.yml</code>: Cobalt static site generator configuration.</li>
+<li><code>index.md</code>: The markdown source for the main <code>index.html</code> page.</li>
+<li><code>install.sh</code>: The bash script users curl to install Wasmtime on macOS and
+Linux.</li>
+<li><code>_layouts/</code>: HTML skeletons that we can use/extend for individual pages.
+<ul>
+<li><code>_layouts/default.liquid</code>: The default HTML skeleton for our website.</li>
+</ul>
+</li>
+<li><code>assets/</code>: Static assets: JS, CSS, images, fonts, etc...
+<ul>
+<li><code>assets/css</code>: CSS files.
+<ul>
+<li><code>assets/css/fonts</code>: Webfonts.</li>
+</ul>
+</li>
+<li><code>assets/images</code>: Image files.</li>
+<li><code>assets/scripts</code>: JS scripts.</li>
+</ul>
+</li>
+<li><code>_site/</code>: The built website. This is checked into the repo so github pages can
+access it. Don't edit these files by hand, edit the sources and rebuild
+instead. Don't review these files, review the original sources instead. CI
+will check that <code>_site</code> doesn't diverge from rebuilding the original sources.</li>
+</ul>
+<h2>Set Up</h2>
+<p>Install the <code>cobalt</code> CLI:</p>
+<pre style="background-color:#2b303b;">
+<span style="color:#c0c5ce;">$ cargo install cobalt-bin
+</span></pre>
+<h2>Building</h2>
+<p>To re-build the <code>wasmtime.dev</code> website, run</p>
+<pre style="background-color:#2b303b;">
+<span style="color:#c0c5ce;">cobalt build
+</span></pre>
+<p>The built site will be in <code>_site/</code>.</p>
+<h2>Development</h2>
+<p>To start a local server and rebuild the website whenever a file is changed, run</p>
+<pre style="background-color:#2b303b;">
+<span style="color:#c0c5ce;">cobalt serve
+</span></pre>
+<p>and visit http://localhost:1024/ in your browser.</p>
