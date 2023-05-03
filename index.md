@@ -182,6 +182,7 @@ the implementation:
 * **[Python]** - the [`wasmtime` PyPI package]
 * **[.NET]** - the [`Wasmtime` NuGet package]
 * **[Go]** - the [`wasmtime-go` repository]
+* **[Ruby]** - the [`wasmtime-rb` repository]
 
 [Rust]: https://bytecodealliance.github.io/wasmtime/lang-rust.html
 [C]: https://bytecodealliance.github.io/wasmtime/examples-c-embed.html
@@ -196,6 +197,8 @@ the implementation:
 [C++]: https://github.com/bytecodealliance/wasmtime-cpp
 [`wasmtime` Conan package]: https://conan.io/center/wasmtime
 [`wasmtime-cpp` Conan package]: https://conan.io/center/wasmtime-cpp
+[Ruby]: https://bytecodealliance.github.io/wasmtime-rb/
+[`wasmtime-rb` repository]: https://github.com/bytecodealliance/wasmtime-rb
 
 </div>
 </section>
