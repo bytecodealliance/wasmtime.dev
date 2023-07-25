@@ -229,13 +229,13 @@ upgrade_is_ok() {
   local install_dir="$2"
   local is_dev_install="$3"
 
-  local wasmtime_bin="$install_dir/wasmtime"
+  local wasmtime_bin="$install_dir/bin/wasmtime"
 
   if [[ -n "$install_dir" && -x "$wasmtime_bin" ]]; then
     local prev_version="$( ($wasmtime_bin --version 2>/dev/null || echo 0.1) | sed -E 's/^.*([0-9]+\.[0-9]+\.[0-9]+).*$/\1/')"
     # if this is a local dev install, skip the equality check
     # if installing the same version, this is a no-op
-    if [ "$is_dev_install" != "true" ] && [ "$prev_version" == "$will_install_version" ]; then
+    if [ "$is_dev_install" != "true" ] && [ "v$prev_version" == "$will_install_version" ]; then
       eprintf "Version $will_install_version already installed"
       return 1
     fi

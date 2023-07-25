@@ -75,8 +75,8 @@ section pre {
 <p>It looks like you’re running macOS or Linux. To download and install Wasmtime,
 run the following in your terminal, then follow the on-screen instructions.</p>
 <pre style="background-color:#2b303b;">
-<span style="color:#8fa1b3;">curl</span><span style="color:#c0c5ce;"> https://wasmtime.dev/install.sh</span><span style="color:#bf616a;"> -sSf </span><span style="color:#c0c5ce;">| </span><span style="color:#8fa1b3;">bash
-</span></pre>
+<code><span style="color:#8fa1b3;">curl</span><span style="color:#c0c5ce;"> https://wasmtime.dev/install.sh</span><span style="color:#bf616a;"> -sSf </span><span style="color:#c0c5ce;">| </span><span style="color:#8fa1b3;">bash
+</span></code></pre>
 <p>You can also download binaries directly from the <a href="https://github.com/bytecodealliance/wasmtime/releases">GitHub
 Releases</a> page.</p>
 </div>
@@ -87,15 +87,15 @@ following, and then follow the onscreen instructions.</p>
 <p>If you’re a Windows Subsystem for Linux user run the following in your terminal,
 then follow the on-screen instructions to install Wasmtime.</p>
 <pre style="background-color:#2b303b;">
-<span style="color:#8fa1b3;">curl</span><span style="color:#c0c5ce;"> https://wasmtime.dev/install.sh</span><span style="color:#bf616a;"> -sSf </span><span style="color:#c0c5ce;">| </span><span style="color:#8fa1b3;">bash
-</span></pre>
+<code><span style="color:#8fa1b3;">curl</span><span style="color:#c0c5ce;"> https://wasmtime.dev/install.sh</span><span style="color:#bf616a;"> -sSf </span><span style="color:#c0c5ce;">| </span><span style="color:#8fa1b3;">bash
+</span></code></pre>
 </div>
 <div id="platform-instructions-default" class="db">
 <p>If you’re running macOS or Linux, download and install Wasmtime by running the
 following in your terminal and following the on-screen instructions.</p>
 <pre style="background-color:#2b303b;">
-<span style="color:#8fa1b3;">curl</span><span style="color:#c0c5ce;"> https://wasmtime.dev/install.sh</span><span style="color:#bf616a;"> -sSf </span><span style="color:#c0c5ce;">| </span><span style="color:#8fa1b3;">bash
-</span></pre>
+<code><span style="color:#8fa1b3;">curl</span><span style="color:#c0c5ce;"> https://wasmtime.dev/install.sh</span><span style="color:#bf616a;"> -sSf </span><span style="color:#c0c5ce;">| </span><span style="color:#8fa1b3;">bash
+</span></code></pre>
 <hr />
 <p>If you are running Windows, download and run the <a href="https://github.com/bytecodealliance/wasmtime/releases/download/dev/wasmtime-dev-x86_64-windows.msi">Wasmtime
 Installer</a>
@@ -113,17 +113,17 @@ then follow the on-screen instructions.</p>
 installed</a> then you can take some Rust
 source code:</p>
 <pre style="background-color:#2b303b;">
-<span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">main</span><span style="color:#c0c5ce;">() {
+<code><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">main</span><span style="color:#c0c5ce;">() {
 </span><span style="color:#c0c5ce;">    println!(&quot;</span><span style="color:#a3be8c;">Hello, world!</span><span style="color:#c0c5ce;">&quot;);
 </span><span style="color:#c0c5ce;">}
-</span></pre>
+</span></code></pre>
 <p>and compile/run it with:</p>
 <pre style="background-color:#2b303b;">
-<span style="color:#8fa1b3;">$</span><span style="color:#c0c5ce;"> rustup target add wasm32-wasi
+<code><span style="color:#8fa1b3;">$</span><span style="color:#c0c5ce;"> rustup target add wasm32-wasi
 </span><span style="color:#8fa1b3;">$</span><span style="color:#c0c5ce;"> rustc hello.rs</span><span style="color:#bf616a;"> --target</span><span style="color:#c0c5ce;"> wasm32-wasi
 </span><span style="color:#8fa1b3;">$</span><span style="color:#c0c5ce;"> wasmtime hello.wasm
 </span><span style="color:#8fa1b3;">Hello,</span><span style="color:#c0c5ce;"> world!
-</span></pre>
+</span></code></pre>
 </div>
 </section>
 <section>
