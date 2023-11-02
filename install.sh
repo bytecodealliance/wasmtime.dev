@@ -41,8 +41,9 @@
 
 get_latest_release() {
   curl -w '' --silent "https://api.github.com/repos/bytecodealliance/wasmtime/releases/latest" | \
-    grep tag_name | \
-    cut -d '"' -f 4
+    tr -d '\n' | \
+    sed 's/.*tag_name": *"//' | \
+    sed 's/".*//'
 }
 
 release_url() {
