@@ -40,7 +40,7 @@
 # either expressed or implied, of the FreeBSD Project.
 
 get_latest_release() {
-  curl --silent "https://api.github.com/repos/bytecodealliance/wasmtime/releases/latest" | \
+  curl -w '' --silent "https://api.github.com/repos/bytecodealliance/wasmtime/releases/latest" | \
     tr -d '\n' | \
     sed 's/.*tag_name": *"//' | \
     sed 's/".*//'
