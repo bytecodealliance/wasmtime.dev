@@ -471,6 +471,12 @@ get_architecture() {
         arm64)
             arch=aarch64
             ;;
+        # Linux identifies RISC-V as "riscv64", but wasmtime tags
+        # their releases using the toolchain name "riscv64gc"
+        # When encountering riscv64, map it to that name.
+        riscv64)
+            arch=riscv64gc
+            ;;
     esac
     echo "$arch"
 }
@@ -487,6 +493,10 @@ check_architecture() {
 
   # Otherwise, check the matrix of OS/architecture support.
   case "$arch/$os" in
+      # See the comment in get_architecture regarding this name.
+      riscv64gc/Linux)
+          return 0
+          ;;
       aarch64/Linux)
           return 0
           ;;
@@ -501,7 +511,7 @@ check_architecture() {
           ;;
   esac
 
-  error "Sorry! Wasmtime currently only provides pre-built binaries for x86_64 (Linux, macOS, Windows), aarch64 (Linux, macOS), and s390x (Linux)."
+  error "Sorry! Wasmtime currently only provides pre-built binaries for x86_64 (Linux, macOS, Windows), aarch64 (Linux, macOS), s390x (Linux) and riscv64 (Linux)."
   return 1
 }
 
