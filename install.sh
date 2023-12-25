@@ -217,7 +217,7 @@ update_profile() {
     return 1
   else
     if ! command grep -qc 'WASMTIME_HOME' "$detected_profile"; then
-      command printf "$path_str" >> "$detected_profile"
+      command printf "$path_str\n" >> "$detected_profile"
     else
       warning "Your profile ($detected_profile) already mentions Wasmtime and has not been changed."
     fi
