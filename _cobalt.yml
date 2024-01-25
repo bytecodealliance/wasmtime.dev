@@ -4,3 +4,5 @@ site:
   base_url: https://wasmtime.dev
 posts:
   rss: rss.xml
+ignore:
+  - README.md
