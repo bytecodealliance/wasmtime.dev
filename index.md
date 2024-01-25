@@ -177,17 +177,18 @@ You can use Wasmtime from a variety of different languages through embeddings of
 the implementation:
 
 * **[Rust]** - the [`wasmtime` crate]
-* **[C]** - the [`wasm.h`, `wasi.h`, and `wasmtime.h` headers][c-headers], [CMake](crates/c-api/CMakeLists.txt) or [`wasmtime` Conan package]
+* **[C]** - the [`wasm.h`, `wasi.h`, and `wasmtime.h` headers][c-headers], [CMake] or [`wasmtime` Conan package]
 * **[C++]** - the [`wasmtime-cpp` repository][C++] or use [`wasmtime-cpp` Conan package]
 * **[Python]** - the [`wasmtime` PyPI package]
 * **[.NET]** - the [`Wasmtime` NuGet package]
 * **[Go]** - the [`wasmtime-go` repository]
-* **[Ruby]** - the [`wasmtime-rb` gem]
+* **[Ruby]** - the [`wasmtime` gem]
 
 [Rust]: https://bytecodealliance.github.io/wasmtime/lang-rust.html
 [C]: https://bytecodealliance.github.io/wasmtime/examples-c-embed.html
 [`wasmtime` crate]: https://crates.io/crates/wasmtime
 [c-headers]: https://bytecodealliance.github.io/wasmtime/c-api/
+[CMake]: https://github.com/bytecodealliance/wasmtime/blob/main/crates/c-api/CMakeLists.txt
 [Python]: https://bytecodealliance.github.io/wasmtime/lang-python.html
 [`wasmtime` PyPI package]: https://pypi.org/project/wasmtime/
 [.NET]: https://bytecodealliance.github.io/wasmtime/lang-dotnet.html
@@ -198,7 +199,7 @@ the implementation:
 [`wasmtime` Conan package]: https://conan.io/center/wasmtime
 [`wasmtime-cpp` Conan package]: https://conan.io/center/wasmtime-cpp
 [Ruby]: https://bytecodealliance.github.io/wasmtime/lang-ruby.html
-[`wasmtime-rb` gem]: https://rubygems.org/gems/wasmtime
+[`wasmtime` gem]: https://rubygems.org/gems/wasmtime
 
 </div>
 </section>
