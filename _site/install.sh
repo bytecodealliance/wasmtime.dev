@@ -6,24 +6,24 @@
 # LICENSE:
 
 # BSD 2-CLAUSE LICENSE
-# 
+#
 # Copyright (c) 2017, The Wasmtime Contributors.
 # All rights reserved.
-# 
+#
 # This product includes:
-# 
+#
 # Contributions from LinkedIn Corporation
 # Copyright (c) 2017, LinkedIn Corporation.
-# 
+#
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
-# 
+#
 # 1. Redistributions of source code must retain the above copyright notice, this
 #    list of conditions and the following disclaimer.
 # 2. Redistributions in binary form must reproduce the above copyright notice,
 #    this list of conditions and the following disclaimer in the documentation
 #    and/or other materials provided with the distribution.
-# 
+#
 # THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
 # ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 # WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -40,7 +40,7 @@
 # either expressed or implied, of the FreeBSD Project.
 
 get_latest_release() {
-  curl -w '' --silent "https://api.github.com/repos/bytecodealliance/wasmtime/releases/latest" | \
+  curl -w "%{stderr}" --silent "https://api.github.com/repos/bytecodealliance/wasmtime/releases/latest" | \
     tr -d '\n' | \
     sed 's/.*tag_name": *"//' | \
     sed 's/".*//'
