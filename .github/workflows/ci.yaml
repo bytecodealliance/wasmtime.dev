@@ -21,7 +21,7 @@ jobs:
     - name: Install cobalt
       run: cargo install cobalt-bin
 
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v5
 
     - name: Check that build is up to date
       run: rm -rf _site/ && cobalt build && git diff --exit-code
