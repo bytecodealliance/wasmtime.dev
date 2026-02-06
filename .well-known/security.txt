@@ -1,0 +1,6 @@
+Contact: mailto:security@bytecodealliance.org
+Contact: https://bytecodealliance.org/security
+Policy: https://docs.wasmtime.dev/security-disclosure.html
+Preferred-Languages: en
+Encryption: https://bytecodealliance.org/.well-known/pgp-key.txt
+Expires: 2026-12-31T23:59:59Z

@@ -6,3 +6,4 @@ posts:
   rss: rss.xml
 ignore:
   - README.md
+  - "!.well-known"
